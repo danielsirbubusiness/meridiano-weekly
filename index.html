@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridiano Weekly</title>
+    <!-- Importing Piazzolla (serif for headlines) and Archivo (sans-serif for body) from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS for rapid styling, though we will heavily rely on custom configuration to match the brand notes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#F4EFE6',
+                        'meridian-ink': '#1C2733',
+                        cotto: '#B5502D',
+                        brass: '#A9822C',
+                        olive: '#6B7A52',
+                    },
+                    fontFamily: {
+                        serif: ['Piazzolla', 'serif'],
+                        sans: ['Archivo', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'sm': '4px', // "4px sharp corners (never rounded)" - using a tight radius
+                    },
+                    borderWidth: {
+                        'hairline': '1px', // "hairline borders instead of shadows"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles to ensure consistency with the "editorial" feel */
+        body {
+            background-color: #F4EFE6;
+            color: #1C2733;
+            font-family: 'Archivo', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Piazzolla', serif;
+        }
+
+        /* Custom utility for the brass divider shown in the reference image */
+        .brass-divider {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .brass-divider::before,
+        .brass-divider::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background-color: #A9822C;
+            max-width: 150px;
+        }
+        
+        /* Adjusting the arc to mimic the logo direction in image_584aad.png */
+        .brass-divider.arc::before {
+             border-top: 1px solid #A9822C;
+             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+             height: 10px;
+             background-color: transparent;
+             margin-right: 10px;
+        }
+        .brass-divider.arc::after {
+             border-top: 1px solid #A9822C;
+             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+             height: 10px;
+             background-color: transparent;
+             margin-left: 10px;
+        }
+
+        .brass-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #B5502D; /* Cotto terracotta mark */
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+        
+        /* Form input styling overrides for sharp corners and hairline borders */
+        input[type="email"] {
+            border: 1px solid #1C2733;
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            font-family: 'Archivo', sans-serif;
+            background-color: transparent;
+        }
+        
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #B5502D;
+        }
+
+        /* Button styling - "rectangular or barely-rounded only" */
+        .btn-primary {
+            background-color: #1C2733;
+            color: #F4EFE6;
+            border-radius: 4px;
+            padding: 0.75rem 1.5rem;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #B5502D;
+        }
+        
+        /* Custom layout constraint for the main column */
+        .editorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-parchment text-meridian-ink min-h-screen flex flex-col">
+
+<header class="bg-meridian-ink py-12 px-6 sm:px-12 text-center">
+    <div class="editorial-container">
+        <!-- Logo construction based on the "Tracked wordmark, brass rule, terracotta mark" direction from image_584aad.png -->
+        <h1 class="text-4xl sm:text-6xl tracking-widest font-serif font-light mb-4 uppercase text-parchment">
+            Meridiano
+        </h1>
+        
+        <div class="brass-divider arc">
+            <div class="brass-dot"></div>
+        </div>
+
+        <p class="font-sans text-sm sm:text-base tracking-widest uppercase text-parchment/80 mt-4">
+            Weekly — Italian Family Business & Mid-Cap M&A
+        </p>
+    </div>
+</header>
+
+<main class="flex-grow py-16 px-6 sm:px-12">
+    <div class="editorial-container grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <!-- Left Column: The Pitch & Subscribe -->
+        <div class="md:col-span-7 flex flex-col justify-center">
+            <h2 class="text-3xl sm:text-4xl font-serif leading-tight mb-6">
+                Succession, and the price of control.
+            </h2>
+            <p class="font-sans text-lg leading-relaxed mb-8 text-meridian-ink/90">
+                Every deal has a story the press release doesn't tell. I dig into who's really giving up control, who's gaining it, and why — one Italian transaction at a time.
+            </p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 mb-4" onsubmit="event.preventDefault(); alert('Subscription prototype submitted.');">
+                <input type="email" placeholder="Enter your email address" required class="flex-grow w-full sm:w-auto focus:ring-1 focus:ring-cotto">
+                <button type="submit" class="btn-primary w-full sm:w-auto shrink-0">Subscribe</button>
+            </form>
+            <p class="text-xs font-sans text-meridian-ink/60 mb-8">
+                Delivered to you every Tuesday. Unsubscribe anytime.
+            </p>
+
+            <div class="border-t border-meridian-ink/20 pt-6 mt-2">
+                <h4 class="font-sans text-sm font-semibold text-meridian-ink uppercase tracking-wider mb-2">About me</h4>
+                <p class="font-sans text-sm leading-relaxed text-meridian-ink/80">
+                    Hi, I'm Daniel — a Bologna-based Economics & Finance student obsessed with how Italian family businesses handle succession and control. I run UNIBO's Fintech Society and trained with AmplifyME. This is where I break down the deals nobody else is explaining properly, using original analysis grounded in local insight.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Column: Excerpt/Teaser -->
+        <div class="md:col-span-5 relative">
+            <!-- Decorative border representing an article excerpt -->
+            <div class="border-t border-b border-meridian-ink/20 py-8 md:pl-8 md:border-l md:border-t-0 md:border-b-0 h-full">
+                <span class="text-cotto font-sans text-xs uppercase tracking-widest font-semibold mb-3 block">Latest Edition</span>
+                <h3 class="text-2xl font-serif leading-snug mb-4">
+                    IMA Sells Control of ATOP, Keeps a Piece of the Upside
+                </h3>
+                <p class="font-sans text-sm leading-relaxed text-meridian-ink/80 mb-6">
+                    On Wednesday, 15th July, IMA Group agreed to sell a majority stake holding of ATOP S.p.A. (ATOP) to Austrian based, entrepreneurial investor Lichtenberg Capital. As part of the transaction, announced July 15th, Lichtenberg Capital will acquire a majority stake in ATOP via a non-specified vehicle, while IMA will continue to be involved as a strong industrial partner and minority shareholder...
+                </p>
+                <a href="#" class="text-meridian-ink font-sans text-sm font-semibold hover:text-cotto transition-colors underline decoration-1 underline-offset-4">Read full analysis &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="bg-meridian-ink text-parchment py-8 px-6 sm:px-12 mt-auto">
+    <div class="editorial-container flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="font-serif text-xl tracking-wider">
+            MERIDIANO
+        </div>
+        <nav class="flex flex-col sm:flex-row gap-2 sm:gap-6 font-sans text-sm text-parchment/70 text-center sm:text-left">
+            <a href="mailto:danielsirbu.business@gmail.com" class="hover:text-cotto transition-colors">danielsirbu.business@gmail.com</a>
+            <a href="https://www.linkedin.com/in/danielsirbufinance" target="_blank" rel="noopener noreferrer" class="hover:text-cotto transition-colors">linkedin.com/in/danielsirbufinance</a>
+        </nav>
+        <div class="font-sans text-xs text-parchment/50">
+            &copy; 2026 Meridiano Weekly.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
