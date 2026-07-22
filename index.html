@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS for styling -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -116,8 +116,10 @@
 <main class="flex-grow py-16 px-6 sm:px-12">
     <div class="editorial-container grid grid-cols-1 md:grid-cols-12 gap-12">
         
-        <!-- Left Column: The Pitch, Native Form & About Me -->
         <div class="md:col-span-7 flex flex-col justify-center">
+            <p class="font-sans text-sm font-semibold tracking-wider text-cotto uppercase mb-2">
+                Weekly - Tuesdays
+            </p>
             <h2 class="text-3xl sm:text-4xl font-serif leading-tight mb-6">
                 Succession, and the price of control.
             </h2>
@@ -125,23 +127,9 @@
                 Every deal has a story the press release doesn't tell. I dig into who's really giving up control, who's gaining it, and why — one Italian transaction at a time.
             </p>
             
-            <form 
-                action="https://subscribe.beehiiv.com/3df590db-e315-4b87-a040-d9380575a40e" 
-                method="POST" 
-                target="_blank" 
-                class="flex flex-col sm:flex-row gap-3 mb-3"
-            >
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Enter your email address" 
-                    required 
-                    class="flex-grow w-full sm:w-auto px-4 py-3 bg-transparent border border-meridian-ink rounded-sm text-meridian-ink placeholder-meridian-ink/50 focus:outline-none focus:border-cotto font-sans text-sm"
-                >
-                <button 
-                    type="submit" 
-                    class="bg-meridian-ink hover:bg-cotto text-parchment font-sans font-medium text-xs tracking-widest uppercase px-6 py-3 rounded-sm transition-colors duration-200 shrink-0"
-                >
+            <form action="https://subscribe.beehiiv.com/3df590db-e315-4b87-a040-d9380575a40e" method="POST" target="_blank" class="flex flex-col sm:flex-row gap-4 mb-4">
+                <input type="email" name="email" placeholder="Enter your email address" required class="flex-grow w-full sm:w-auto text-meridian-ink border border-meridian-ink/40 rounded-sm px-4 py-3 bg-transparent focus:outline-none focus:border-meridian-ink placeholder:text-meridian-ink/40 font-sans">
+                <button type="submit" class="bg-meridian-ink text-parchment uppercase tracking-wider font-medium text-sm px-8 py-3 rounded-sm hover:bg-cotto transition-colors w-full sm:w-auto shrink-0 font-sans">
                     SUBSCRIBE
                 </button>
             </form>
@@ -161,14 +149,18 @@
         <div class="md:col-span-5 relative">
             <div class="border-t border-b border-meridian-ink/20 py-8 md:pl-8 md:border-l md:border-t-0 md:border-b-0 h-full">
                 <span class="text-cotto font-sans text-xs uppercase tracking-widest font-semibold mb-3 block">Latest Edition</span>
-                <h3 class="text-2xl font-serif leading-snug mb-4">
-                    IMA Sells Control of ATOP, Keeps a Piece of the Upside
-                </h3>
+                
+                <a href="https://meridiano-weekly.beehiiv.com/p/ima-sells-control-of-atop" target="_blank">
+                    <h3 class="text-2xl font-serif leading-snug mb-4 hover:text-cotto transition-colors">
+                        IMA Sells Control of ATOP, Keeps a Piece of the Upside
+                    </h3>
+                </a>
+
                 <p class="font-sans text-sm leading-relaxed text-meridian-ink/80 mb-6">
                     On Wednesday, 15th July, IMA Group agreed to sell a majority stake holding of ATOP S.p.A. (ATOP) to Austrian based, entrepreneurial investor Lichtenberg Capital. As part of the transaction, announced July 15th, Lichtenberg Capital will acquire a majority stake in ATOP via a non-specified vehicle, while IMA will continue to be involved as a strong industrial partner and minority shareholder...
                 </p>
-                <!-- ARTICLE LINK POINTING TO YOUR BEEHIIV PUBLICATION POST -->
-                <a href="https://meridiano-weekly.beehiiv.com" target="_blank" class="text-meridian-ink font-sans text-sm font-semibold hover:text-cotto transition-colors underline decoration-1 underline-offset-4">Read full analysis &rarr;</a>
+                
+                <a href="https://meridiano-weekly.beehiiv.com/p/ima-sells-control-of-atop" target="_blank" class="text-meridian-ink font-sans text-sm font-semibold hover:text-cotto transition-colors underline decoration-1 underline-offset-4">Read full analysis &rarr;</a>
             </div>
         </div>
 
