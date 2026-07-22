@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Meridiano Weekly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#F4EFE6',
+                        'meridian-ink': '#1C2733',
+                        cotto: '#B5502D',
+                        brass: '#A9822C',
+                        olive: '#6B7A52',
+                    },
+                    fontFamily: {
+                        serif: ['Piazzolla', 'serif'],
+                        sans: ['Archivo', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'sm': '4px',
+                    },
+                    borderWidth: {
+                        'hairline': '1px',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #F4EFE6;
+            color: #1C2733;
+            font-family: 'Archivo', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Piazzolla', serif;
+        }
+
+        .brass-divider {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .brass-divider::before,
+        .brass-divider::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background-color: #A9822C;
+            max-width: 150px;
+        }
+        
+        .brass-divider.arc::before {
+             border-top: 1px solid #A9822C;
+             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+             height: 10px;
+             background-color: transparent;
+             margin-right: 10px;
+        }
+        .brass-divider.arc::after {
+             border-top: 1px solid #A9822C;
+             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+             height: 10px;
+             background-color: transparent;
+             margin-left: 10px;
+        }
+
+        .brass-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #B5502D;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+        
+        .editorial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-parchment text-meridian-ink min-h-screen flex flex-col">
+
+<header class="bg-meridian-ink py-12 px-6 sm:px-12 text-center">
+    <div class="editorial-container">
+        <a href="index.html" class="block hover:opacity-90 transition-opacity">
+            <h1 class="text-4xl sm:text-6xl tracking-widest font-serif font-light mb-4 uppercase text-parchment">
+                Meridiano
+            </h1>
+        </a>
+        
+        <div class="brass-divider arc">
+            <div class="brass-dot"></div>
+        </div>
+
+        <p class="font-sans text-sm sm:text-base tracking-widest uppercase text-parchment/80 mt-4">
+            Weekly — Italian Family Business & Mid-Cap M&A
+        </p>
+    </div>
+</header>
+
+<main class="flex-grow py-16 px-6 sm:px-12">
+    <div class="editorial-container max-w-2xl">
+        
+        <div class="flex items-center justify-between border-b border-meridian-ink/20 pb-6 mb-12">
+            <h2 class="text-3xl font-serif">The Archive</h2>
+            <a href="index.html" class="font-sans text-sm font-semibold tracking-wider text-meridian-ink/60 hover:text-cotto uppercase transition-colors">
+                &larr; Back to Home
+            </a>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Article Item 1 (Latest) -->
+            <article class="group">
+                <p class="font-sans text-xs font-semibold tracking-wider text-cotto uppercase mb-2">
+                    July 22, 2026
+                </p>
+                <a href="https://meridiano-weekly.beehiiv.com/p/ima-sells-control-of-atop-keeps-a-piece-of-the-upside" target="_blank" class="block">
+                    <h3 class="text-2xl font-serif leading-snug mb-3 group-hover:text-cotto transition-colors">
+                        IMA Sells Control of ATOP, Keeps a Piece of the Upside
+                    </h3>
+                </a>
+                <p class="font-sans text-base leading-relaxed text-meridian-ink/80">
+                    On Wednesday, 15th July, IMA Group agreed to sell a majority stake holding of ATOP S.p.A. (ATOP) to Austrian based, entrepreneurial investor Lichtenberg Capital...
+                </p>
+            </article>
+
+        </div>
+    </div>
+</main>
+
+<footer class="bg-meridian-ink text-parchment py-8 px-6 sm:px-12 mt-auto">
+    <div class="editorial-container flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="font-serif text-xl tracking-wider">
+            MERIDIANO
+        </div>
+        <nav class="flex flex-col sm:flex-row gap-2 sm:gap-6 font-sans text-sm text-parchment/70 text-center sm:text-left">
+            <a href="archive.html" class="hover:text-cotto transition-colors">Archive</a>
+            <a href="mailto:danielsirbu.business@gmail.com" class="hover:text-cotto transition-colors">danielsirbu.business@gmail.com</a>
+            <a href="https://www.linkedin.com/in/danielsirbufinance" target="_blank" rel="noopener noreferrer" class="hover:text-cotto transition-colors">linkedin.com/in/danielsirbufinance</a>
+        </nav>
+        <div class="font-sans text-xs text-parchment/50">
+            &copy; 2026 Meridiano Weekly.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
