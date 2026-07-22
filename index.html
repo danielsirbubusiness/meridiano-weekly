@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS for rapid styling, though we will heavily rely on custom configuration to match the brand notes -->
+    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,17 +26,16 @@
                         sans: ['Archivo', 'sans-serif'],
                     },
                     borderRadius: {
-                        'sm': '4px', // "4px sharp corners (never rounded)" - using a tight radius
+                        'sm': '4px',
                     },
                     borderWidth: {
-                        'hairline': '1px', // "hairline borders instead of shadows"
+                        'hairline': '1px',
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Base styles to ensure consistency with the "editorial" feel */
         body {
             background-color: #F4EFE6;
             color: #1C2733;
@@ -49,7 +48,7 @@
             font-family: 'Piazzolla', serif;
         }
 
-        /* Custom utility for the brass divider shown in the reference image */
+        /* Custom utility for the brass divider */
         .brass-divider {
             position: relative;
             display: flex;
@@ -67,7 +66,6 @@
             max-width: 150px;
         }
         
-        /* Adjusting the arc to mimic the logo direction in image_584aad.png */
         .brass-divider.arc::before {
              border-top: 1px solid #A9822C;
              border-radius: 50% 50% 0 0 / 100% 100% 0 0;
@@ -86,44 +84,11 @@
         .brass-dot {
             width: 6px;
             height: 6px;
-            background-color: #B5502D; /* Cotto terracotta mark */
+            background-color: #B5502D;
             border-radius: 50%;
             margin: 0 10px;
         }
         
-        /* Form input styling overrides for sharp corners and hairline borders */
-        input[type="email"] {
-            border: 1px solid #1C2733;
-            border-radius: 4px;
-            padding: 0.75rem 1rem;
-            font-family: 'Archivo', sans-serif;
-            background-color: transparent;
-        }
-        
-        input[type="email"]:focus {
-            outline: none;
-            border-color: #B5502D;
-        }
-
-        /* Button styling - "rectangular or barely-rounded only" */
-        .btn-primary {
-            background-color: #1C2733;
-            color: #F4EFE6;
-            border-radius: 4px;
-            padding: 0.75rem 1.5rem;
-            font-family: 'Archivo', sans-serif;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.875rem;
-            transition: background-color 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #B5502D;
-        }
-        
-        /* Custom layout constraint for the main column */
         .editorial-container {
             max-width: 800px;
             margin: 0 auto;
@@ -134,7 +99,6 @@
 
 <header class="bg-meridian-ink py-12 px-6 sm:px-12 text-center">
     <div class="editorial-container">
-        <!-- Logo construction based on the "Tracked wordmark, brass rule, terracotta mark" direction from image_584aad.png -->
         <h1 class="text-4xl sm:text-6xl tracking-widest font-serif font-light mb-4 uppercase text-parchment">
             Meridiano
         </h1>
@@ -152,7 +116,6 @@
 <main class="flex-grow py-16 px-6 sm:px-12">
     <div class="editorial-container grid grid-cols-1 md:grid-cols-12 gap-12">
         
-        <!-- Left Column: The Pitch & Subscribe -->
         <div class="md:col-span-7 flex flex-col justify-center">
             <h2 class="text-3xl sm:text-4xl font-serif leading-tight mb-6">
                 Succession, and the price of control.
@@ -161,23 +124,11 @@
                 Every deal has a story the press release doesn't tell. I dig into who's really giving up control, who's gaining it, and why — one Italian transaction at a time.
             </p>
             
-            <form 
-  action="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3df590db-e315-4b87-a040-d9380575a40e" 
-  method="POST" 
-  target="_blank" 
-  class="flex flex-col sm:flex-row gap-4 mb-4"
->
-  <input 
-    type="email" 
-    name="email" 
-    placeholder="Enter your email address" 
-    required 
-    class="flex-grow w-full sm:w-auto text-meridian-ink focus:ring-1 focus:ring-cotto"
-  >
-  <button type="submit" class="btn-primary w-full sm:w-auto shrink-0">
-    SUBSCRIBE
-  </button>
-</form>
+            <!-- BEEHIIV SUBSCRIPTION FORM EMBED -->
+            <div class="mb-4">
+                <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3df590db-e315-4b87-a040-d9380575a40e"></script>
+            </div>
+
             <p class="text-xs font-sans text-meridian-ink/60 mb-8">
                 Delivered to you every Tuesday. Unsubscribe anytime.
             </p>
@@ -190,9 +141,7 @@
             </div>
         </div>
 
-        <!-- Right Column: Excerpt/Teaser -->
         <div class="md:col-span-5 relative">
-            <!-- Decorative border representing an article excerpt -->
             <div class="border-t border-b border-meridian-ink/20 py-8 md:pl-8 md:border-l md:border-t-0 md:border-b-0 h-full">
                 <span class="text-cotto font-sans text-xs uppercase tracking-widest font-semibold mb-3 block">Latest Edition</span>
                 <h3 class="text-2xl font-serif leading-snug mb-4">
@@ -201,7 +150,8 @@
                 <p class="font-sans text-sm leading-relaxed text-meridian-ink/80 mb-6">
                     On Wednesday, 15th July, IMA Group agreed to sell a majority stake holding of ATOP S.p.A. (ATOP) to Austrian based, entrepreneurial investor Lichtenberg Capital. As part of the transaction, announced July 15th, Lichtenberg Capital will acquire a majority stake in ATOP via a non-specified vehicle, while IMA will continue to be involved as a strong industrial partner and minority shareholder...
                 </p>
-                <a href="#" class="text-meridian-ink font-sans text-sm font-semibold hover:text-cotto transition-colors underline decoration-1 underline-offset-4">Read full analysis &rarr;</a>
+                <!-- ARTICLE LINK POINTING TO YOUR BEEHIIV PUBLICATION POST -->
+                <a href="https://meridiano-weekly.beehiiv.com" target="_blank" class="text-meridian-ink font-sans text-sm font-semibold hover:text-cotto transition-colors underline decoration-1 underline-offset-4">Read full analysis &rarr;</a>
             </div>
         </div>
 
